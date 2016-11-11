@@ -16,8 +16,16 @@ var params = {
 
 // Create the Passport Jwt Startegy
 var strategy = new JwtStrategy(params, function (payload, done) {
-    var user = users[payload.id] || null;
-    if (user) {
+    // var user = users[payload.id] || null;
+    // if (user) {
+    //     return done(null, { id: user.id });
+    // } else {
+    //     return done(new Error("User not found"), null);
+    // }
+
+    var  check = users.checkCredentials(payload.name, payload.password)
+
+    if (check) {
         return done(null, { id: user.id });
     } else {
         return done(new Error("User not found"), null);

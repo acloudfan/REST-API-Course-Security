@@ -3,7 +3,7 @@
 // http://www.acloudfan.com
 
 var     express = require('express')
-var     basicauth = require(__dirname + '/basicauth')
+var     jwtauth = require(__dirname + '/tokens/jwtauth')
 
 
 // Express app setup
@@ -11,7 +11,7 @@ var app = express();
 var router = express.Router();
 
 // This is the passport middlewae function tha get called first
-var  auth = basicauth.auth
+var  auth = jwt.auth
 router.get('/private',auth,function(req, res){
     res.send('Access granted to private resource!!!')
 });
