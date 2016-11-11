@@ -7,9 +7,11 @@ var users = require(__dirname + '/userdata/users')
 
 passport.use(new BasicStrategy(function (username, password, done) {
 
-    var check = users.checkCredentials(username,password)
-    return done(null, check)
-
+    var user = users.checkCredentials(username,password)
+    if(user)
+        return done(null, true)
+    else
+        return done(null, false)
 }));
 
 var auth = passport.authenticate('basic', { session: false })

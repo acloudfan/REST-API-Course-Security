@@ -11,9 +11,7 @@ var checkCredentials = function (username, password) {
         return u.name === username && u.password === password;
     });
 
-    if (user) return true
-    else return false
-
+    return user
 }
 
 exports.checkCredentials = checkCredentials;
