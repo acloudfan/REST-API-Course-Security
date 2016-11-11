@@ -10,8 +10,9 @@ var     basicauth = require(__dirname + '/basicauth')
 var app = express();
 var router = express.Router();
 
-// This is the passport middlewae function tha get called first
+// This is the passport middlewae function that get called first
 var  auth = basicauth.auth
+// Setup the route with basic authentication
 router.get('/private',auth,function(req, res){
     res.send('Access granted to private resource!!!')
 });
