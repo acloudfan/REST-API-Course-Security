@@ -4,7 +4,7 @@ var passportJWT = require("passport-jwt");
 var extractJwt = passportJWT.ExtractJwt;
 var JwtStrategy = passportJWT.Strategy;
 
-var users = require(__dirname + '/tokens/users')
+var users = require(__dirname + '/userdata/users')
 
 // Set the jwt location in the request
 // Can be header, query param, body 
