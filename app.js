@@ -5,7 +5,7 @@
 var     express = require('express')
 var     bodyParser = require('body-parser')
 var     jwtAuth = require(__dirname + '/tokens/jwtauth')
-
+var     jwtValidate = require(__dirname + '/tokens/validator')
 
 // Express app setup
 var app = express();
@@ -18,8 +18,8 @@ router.post('/token',auth,function(req, res){
     res.send('token');
 });
 
-
-router.get('/private',function(req,res){
+auth = jwtValidate.auth
+router.get('/private',auth,function(req,res){
     res.send('Access granted to private resource!!!')
 });
 
