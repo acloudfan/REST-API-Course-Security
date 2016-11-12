@@ -1,7 +1,4 @@
 // Validates the token passed by the caller
-// REMOVE
-// https://www.sitepoint.com/using-json-web-tokens-node-js/
-
 // {tone:tok, expires:timestamp}
 var  tokens = [];
 
