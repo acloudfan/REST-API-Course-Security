@@ -1,4 +1,4 @@
-// Basic Authentication
+// JWT Token Authentication
 // Part of the course on "REST API Design Development & Management"
 // http://www.acloudfan.com
 

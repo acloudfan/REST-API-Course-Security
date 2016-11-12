@@ -1,7 +1,5 @@
-// Stores the issued tokens in memory
 // DO NOT USE THIS IN PRODUCTION Implementation
 // This is just for demo purposes
-
 var jwt = require("jwt-simple");
 var jwtAuth = require(__dirname + '/jwtauth')
 var tokenStore = require(__dirname + '/tokenstore')
